@@ -90,43 +90,6 @@ client.on('message', message => {
 
 
 
-// Pokemon tag test
-
-client.on("message", async (message) => {
-  if (!message.content.startsWith(prefix + "pokemon") || message.author.bot) return;
-
-let pTitles = [
-    {
-      name: "Bulbasaur",
-      output: "[__Bulbasaur__](https://pokemondb.net/pokedex/bulbasaur)! A [__Grass__](https://pokemondb.net/type/grass) and [__Poison__](https://pokemondb.net/type/poison) pokémon!",
-      img: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
-      },
-    {
-      name: "Charmander",
-      output: "[__Charmander__](https://pokemondb.net/pokedex/charmander)! A [__Fire__](https://pokemondb.net/type/fire) pokémon!",
-      img: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png"
-      },    
-    {
-      name: "Charizard",
-      output: "[__Charizard__](https://pokemondb.net/pokedex/Charizard)! A [__Fire__](https://pokemondb.net/type/fire) & [__Flying__](https://pokemondb.net/type/flying) pokémon!",
-      img: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/006.png"
-      },      
-]
-
-
-var pokemon = pTitles[Math.floor(Math.random() * pTitles.length)];
-
-
-
-    message.channel.send({embed: {
-      color: 0xB75AFF, //Purple
-      title: `${message.member.displayName}, you caught a wild...`,
-      description: `${pokemon.output}`,
-      image: {
-        url: `${pokemon.img}`}      
-          
-          }})
-          });
 
 
 
@@ -143,21 +106,6 @@ var pokemon = pTitles[Math.floor(Math.random() * pTitles.length)];
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          
 
 
 

@@ -15,13 +15,13 @@ module.exports = {
 
     let button2 = new MessageButton()
       .setStyle('blurple')
-      .setLabel('Metal Gear Survive') 
+      .setLabel('Super Mario') 
       .setID('null2') 
       .setDisabled()
 
     let button3 = new MessageButton()
       .setStyle('green')
-      .setLabel('Fallout 4') 
+      .setLabel('Fallout') 
       .setID('exanswer') 
       .setDisabled()
 
@@ -40,12 +40,12 @@ module.exports = {
 
     let button6 = new MessageButton()
       .setStyle('blurple')
-      .setLabel('Metal Gear Survive') 
+      .setLabel('Super Mario') 
       .setID('null2') 
 
     let button7 = new MessageButton()
       .setStyle('green')
-      .setLabel('Fallout 4') 
+      .setLabel('Fallout') 
       .setID('exanswer') 
 
     let button8 = new MessageButton()
@@ -56,13 +56,13 @@ module.exports = {
 
     let embed1 = new MessageEmbed()
         .setColor('#FFF000')
-        .setTitle('Vault Boy is featured in what video game?')
+        .setTitle('Vault Boy is featured in what video game franchise?')
         .setDescription(`***Example Round***`)
         .setThumbnail(`https://imgur.com/I09vjs2.png`)
 
     let embed2 = new MessageEmbed()
         .setColor('#FFF000')
-        .setTitle('Vault Boy is featured in what video game?')
+        .setTitle('Vault Boy is featured in what video game franchise?')
         .setDescription(`***Example Round***`)
         .setThumbnail(`https://imgur.com/I09vjs2.png`)
 
@@ -81,9 +81,9 @@ module.exports = {
         
   
 
-await message.channel.send(a).then( message => 
+message.channel.send(a).then( message => 
      
 
-     (setTimeout(async function() {message.edit(b)}, 10000)))
+     (setTimeout(async function() {message.edit(b)}, 3000)))
 
   }}

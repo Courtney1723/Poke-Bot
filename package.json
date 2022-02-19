@@ -11,10 +11,18 @@
   "dependencies": {
     "discord-buttons": "^4.0.0",
     "discord.js": "^12.5.3",
-    "node": "^16.6.1",
+    "node": "^17.4.0",
     "node-cron": "^3.0.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.7"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Courtney1723/Pok-Bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Courtney1723/Pok-Bot/issues"
+  },
+  "homepage": "https://github.com/Courtney1723/Pok-Bot#readme",
   "description": ""
 }

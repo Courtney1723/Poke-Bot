@@ -1,6 +1,6 @@
 const {MessageButton} = require(`discord-buttons`)
 
-const { MessageEmbed } = require('discord.js'); //required for embeds
+const { Collector, MessageEmbed } = require('discord.js'); //required for embeds
 
 module.exports = {
 	name: 'clickButton',
@@ -15,8 +15,67 @@ module.exports = {
         .setDescription(`Congratulations <@${button.clicker.id}>! You have been awarded **3** points!`)
 
 
-
     
+
+if (button.id === "exanswer") { 
+
+  button.reply.defer()
+
+    let button1 = new MessageButton()
+      .setStyle('red')
+      .setLabel('Epic Mickey') 
+      .setID('null1') 
+      .setDisabled()
+
+    let button2 = new MessageButton()
+      .setStyle('blurple')
+      .setLabel('Super Mario') 
+      .setID('null2') 
+      .setDisabled()
+
+    let button3 = new MessageButton()
+      .setStyle('green')
+      .setLabel('Fallout') 
+      .setID('exanswer') 
+      .setDisabled()
+
+    let button4 = new MessageButton()
+      .setStyle('grey')
+      .setLabel('Bioshock') 
+      .setID('null4') 
+      .setDisabled()
+
+    let embed3 = new MessageEmbed()
+        .setColor('#FFF000')
+        .setTitle('Vault Boy is featured in what video game franchise?')
+        .setDescription(`<@${button.clicker.id}> won this round! \n> **Fallout** \nwas the correct answer
+        `)
+        .setThumbnail(`https://imgur.com/I09vjs2.png`)  
+
+
+      const filter = (button, user) => button.id === 'exanswer' && !user.bot;
+
+      const collector = 
+      button.message.createButtonCollector(filter, {max:1, time: 60000 })
+
+
+collector.on('collect', async (button, user, clicker, filter) => {        
+
+
+setTimeout(function() {button.message.edit({
+  buttons: [
+    button1, button2, button3, button4
+  ],
+  embed: embed3
+    })}, 10000)
+
+setTimeout(function() {button.channel.send({
+  embed: embedCongrats
+    })}, 12000)})
+
+
+} else 
+
 if(button.id === "r02answer") {
 
     button.reply.defer()
@@ -162,83 +221,34 @@ setTimeout(function() {button.channel.send({
     
     } else 
 
-if (button.id === "exanswer") { 
-
-  button.reply.defer()
-
-      let button1 = new MessageButton()
-      .setStyle('red')
-      .setLabel('Epic Mickey') 
-      .setID('null1') 
-      .setDisabled()
-
-    let button2 = new MessageButton()
-      .setStyle('blurple')
-      .setLabel('Metal Gear Survive') 
-      .setID('null2') 
-      .setDisabled()
-
-    let button3 = new MessageButton()
-      .setStyle('green')
-      .setLabel('Fallout 4') 
-      .setID('exanswer') 
-      .setDisabled()
-
-    let button4 = new MessageButton()
-      .setStyle('grey')
-      .setLabel('Bioshock') 
-      .setID('null4') 
-      .setDisabled()
-
-    let embed3 = new MessageEmbed()
-        .setColor('#FFF000')
-        .setTitle('Vault Boy is featured in what video game?')
-        .setDescription(`<@${button.clicker.id}> won this round! \n> **Fallout 4** \nwas the correct answer
-        `)
-        .setThumbnail(`https://imgur.com/I09vjs2.png`)  
-
-
-setTimeout(function() {button.message.edit({
-  buttons: [
-    button1, button2, button3, button4
-  ],
-  embed: embed3
-    })}, 10000)
-
-setTimeout(function() {button.channel.send({
-  embed: embedCongrats
-    })}, 12000)
-      
-
-} else 
-
 if (button.id === "null1") { 
 
-  button.reply.defer()
+  return
       
 
 } else 
 
 if (button.id === "null2") { 
 
-  button.reply.defer()
+  return
       
 
 } else 
 
 if (button.id === "null3") { 
 
-  button.reply.defer()
+  return
       
 
 } else 
 
 if (button.id === "null4") { 
 
-  button.reply.defer()
+  return
       
 
 } else 
+
  error => console.log(error)
 
 
